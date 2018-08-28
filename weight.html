@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="weight converter app" content="Amar Bessedik, web design, responsive web design, boostrap 4, javascript, html5, css3, jquery">
+    <title>WEIGHTCONVERTER</title>
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.5.2/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+        crossorigin="anonymous">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+        crossorigin="anonymous"></script>
+
+    <link rel="stylesheet" href="./css/app-style.css">
+
+</head>
+
+<body>
+    <!--header-->
+    <div id="header" class="clearfix w-100">
+        <span id="app-title">
+            <kbd id="app-name">weightConverter</kbd>
+        </span>
+        <a href="../../../index.html" style="float: right; padding-right: 50px; padding-top: 10px; font-weight: bold; color: rgb(231, 171, 6);">Home</a>
+    </div>
+
+            <div class="row">
+                    <div id="app-container" class="mt-2 container col col-lg-6">
+                        <form id="wc-form">
+                            <!--Radio buttons-->
+                            <div class="form-group">
+                                <fieldset>
+                                    <label class="radio-inline control-label" for="two" id="radio2">
+                                        <input id="two" type="radio" name="selection" value="2" checked hidden/>
+                                        <kbd class="badge badge-danger" id="kg-label">Kilograms (kg)</kbd>
+                                    </label>
+            
+                                    <label class="radio-inline control-label" for="one" id="radio1">
+                                        <input id="one" type="radio" name="selection" value="1" hidden/>
+                                        <kbd class="badge badge-danger" id="lb-label">Pounds (lb)</kbd>
+                                    </label>
+                                    <label class="radio-inline control-label" for="three" id="radio3">
+                                        <input id="three" type="radio" name="selection" value="3" hidden/>
+                                        <kbd class="badge badge-danger" id="oz-label">Ounces (oz)</kbd>
+                                    </label>
+                                    <label class="radio-inline control-label" for="four" id="radio4">
+                                        <input id="four" type="radio" name="selection" value="4" hidden/>
+                                        <kbd class="badge badge-danger" id="gr-label">Grams (gr)</kbd>
+                                    </label>
+                                    <label class="radio-inline control-label" for="five" id="radio5">
+                                        <input id="five" type="radio" name="selection" value="5" hidden/>
+                                        <kbd class="badge badge-danger" id="st-label">Stones (st)</kbd>
+                                    </label>
+                                </fieldset>
+                            </div>
+            
+                            <div id="choices">
+                                <!--lbs output divs -->
+                                <div id="w-1" class="desc">
+                                    <div class="form-group">
+                                        <label class="unit badge-pill badge-dark">Pounds</label>
+                                        <input id="lbsInput" type="number" min="0" class="form-control form-control-lg card-block" placeholder="Enter weight in pounds ...">
+                                    </div>
+            
+                                    <div id="output1">
+                                        <div class="card mb-3">
+                                            <div id="kgsOutput1">
+                                                <label class="mesure">Kilograms</label>
+                                                <div class="card-block" id="kgsOutput-1"></div>
+                                            </div>
+                                        </div>
+                                        <div class="card mb-3">
+                                            <div id="grsOutput1">
+                                                <label class="mesure">Grams</label>
+                                                <div class="card-block" id="grsOutput-1"></div>
+                                            </div>
+                                        </div>
+                                        <div class="card mb-3">
+                                            <div id="stsOutput1">
+                                                <label class="mesure">Stones</label>
+                                                <div class="card-block" id="stsOutput-1"></div>
+                                            </div>
+                                        </div>
+                                        <div class="card mb-3">
+                                            <div id="ozsOutput1">
+                                                <label class="mesure">Ounces</label>
+                                                <div class="card-block" id="ozsOutput-1"></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!--kgs output divs -->
+                                <div id="w-2" class="desc">
+                                    <div class="form-group">
+                                        <label class="unit badge-pill badge-dark">Kilograms</label>
+                                        <input id="kgsInput" type="number" min="0" class="form-control form-control-lg card-block" placeholder="Enter weight in kilograms ...">
+                                    </div>
+                                    <div id="output2">
+                                        <div class="card mb-3">
+                                            <div id="grsOutput2">
+                                                <label class="mesure">Grams</label>
+                                                <div class="card-block" id="grsOutput-2"></div>
+                                            </div>
+                                        </div>
+                                        <div class="card mb-3">
+                                            <div id="lbsOutput2">
+                                                <label class="mesure">Pounds</label>
+                                                <div class="card-block" id="lbsOutput-2"></div>
+                                            </div>
+                                        </div>
+                                        <div class="card mb-3">
+                                            <div id="stsOutput2">
+                                                <label class="mesure">Stones</label>
+                                                <div class="card-block" id="stsOutput-2"></div>
+                                            </div>
+                                        </div>
+                                        <div class="card mb-3">
+                                            <div id="ozsOutput2">
+                                                <label class="mesure">Ounces</label>
+                                                <div class="card-block" id="ozsOutput-2"></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- onces output divs -->
+                                <div id="w-3" class="desc">
+                                    <div class="form-group">
+                                        <label class="unit badge-pill badge-dark">Ounces</label>
+                                        <input id="ozsInput" type="number" min="0" class="form-control form-control-lg card-block" placeholder="Enter weight ounces ...">
+                                    </div>
+                                    <div id="output3">
+                                        <div class="card mb-3">
+                                            <div id="grsOutput3">
+                                                <label class="mesure">Grams</label>
+                                                <div class="card-block" id="grsOutput-3"></div>
+                                            </div>
+                                        </div>
+                                        <div class="card mb-3">
+                                            <div id="lbsOutput3">
+                                                <label class="mesure">Pounds</label>
+                                                <div class="card-block" id="lbsOutput-3"></div>
+                                            </div>
+                                        </div>
+                                        <div class="card mb-3">
+                                            <div id="stsOutput3">
+                                                <label class="mesure">Pounds</label>
+                                                <div class="card-block" id="stsOutput-3"></div>
+                                            </div>
+                                        </div>
+                                        <div class="card mb-3">
+                                            <div id="kgsOutput3">
+                                                <label class="mesure">Kilograms</label>
+                                                <div class="card-block" id="kgsOutput-3"></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!--grams output divs -->
+                                <div id="w-4" class="desc">
+                                    <div class="form-group">
+                                        <label class="unit badge-pill badge-dark">Grams</label>
+                                        <input id="grsInput" type="number" min="0" class="form-control form-control-lg card-block" placeholder="Enter weight in grams ...">
+                                    </div>
+                                    <div id="output4">
+                                        <div class="card mb-3">
+                                            <div id="kgsOutput4">
+                                                <label class="mesure">Kilograms</label>
+                                                <div class="card-block" id="kgsOutput-4"></div>
+                                            </div>
+                                        </div>
+                                        <div class="card mb-3">
+                                            <div id="lbsOutput4">
+                                                <label class="mesure">Pounds</label>
+                                                <div class="card-block" id="lbsOutput-4"></div>
+                                            </div>
+                                        </div>
+                                        <div class="card mb-3">
+                                            <div id="ozsOutput4">
+                                                <label class="mesure">Ounces</label>
+                                                <div class="card-block" id="ozsOutput-4"></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!--stones output divs -->
+                                <div id="w-5" class="desc">
+                                    <div class="form-group">
+                                        <label class="unit badge-pill badge-dark">Stones</label>
+                                        <input id="stsInput" type="number" min="0" class="form-control form-control-lg card-block" placeholder="Enter weight in stones ...">
+                                    </div>
+                                    <div id="output5">
+                                        <div class="card mb-3">
+                                            <div id="kgsOutput5">
+                                                <label class="mesure">Kilograms</label>
+                                                <div class="card-block" id="kgsOutput-5"></div>
+                                            </div>
+                                        </div>
+                                        <div class="card mb-3">
+                                            <div id="grsOutput5">
+                                                <label class="mesure">Grams</label>
+                                                <div class="card-block" id="grsOutput-5"></div>
+                                            </div>
+                                        </div>
+                                        <div class="card mb-3">
+                                            <div id="lbsOutput5">
+                                                <label class="mesure">Pounds</label>
+                                                <div class="card-block" id="lbsOutput-5"></div>
+                                            </div>
+                                        </div>
+                                        <div class="card mb-3">
+                                            <div id="ozsOutput5">
+                                                <label class="mesure">Ounces</label>
+                                                <div class="card-block" id="ozsOutput-5"></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+                            <div id="error"></div>
+            
+                            <!--clear button -->
+                            <div class="form-group">
+                                <button class="btn badge-pill badge-dark float-right" id="clear">RESET</button>
+                            </div>
+                            <br>
+                            <br>
+                        </form>
+                    </div>
+                    
+                    <div id="side-note" class="mt-4 container col col-lg-3">
+                        <em class="badge badge-pill badge-dark">Note :</em>
+                        <p>The focus in the design of
+                            <strong>
+                                <em class="text-danger">WEIGHTCONVERTER</em>
+                            </strong> app is speed, functionality, responsiveness, UI, UX, scalability &amp; adaptability.</p>
+                        <hr>
+                        <blockquote class="block-quote ">
+                            <em class="badge badge-pill badge-dark">Tools :</em>
+                            <p>Bootstrap 4, jQuery, Javascript, HTML5, CSS3</p>
+            
+                            <hr>
+            
+                            <br>
+                            <br>
+                            <cite id="foot-print" class="badge btn-danger float-right">
+                                &copy; AmarBessedik
+                            </cite>
+                            <br>
+                        </blockquote>
+                    </div>
+                </div>
+            
+                <br>
+                <footer class="footer" >
+                    <h5>Contact Info</h5>
+                    <p>
+                        <label for="contact"></label>
+                        <kbd class="btn-warning">amar.bessedik@gmail.com</kbd>
+                    </p>
+                    <h6>&copy; AmarBessedik, May 2018</h6>
+                </footer>
+     
+
+
+    <script src="./js/app-script.js" type="text/javascript"></script>
+
+    <script type="text/javascript">
+        document.getElementById("clear").addEventListener('click', clear);
+        function clear() {
+            var ID = [];
+            $('.card-block').each(function () {
+                ID.push(this.id);
+            });
+            var n = ID.length;
+
+            $(document).ready(function () {
+                /* Single line Reset function executes on click of Reset Button */
+                $('#kgsInput').val('').blur();
+                $('#lbsInput').val('').blur();
+                $('#grsInput').val('').blur();
+                $('#ozsInput').val('').blur();
+                $('#stsInput').val('').blur();
+
+                for (var i = 0; i < n; i++)
+                    document.getElementById(ID[i]).innerHTML = '';
+            });
+        }
+    </script>
+</body>
+
+</html>
